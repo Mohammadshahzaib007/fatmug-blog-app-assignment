@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cover: {
     marginLeft: 'auto',
-    width: 151
+    width: '40%'
   },
   controls: {
     display: 'flex',

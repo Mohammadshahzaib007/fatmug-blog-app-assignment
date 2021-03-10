@@ -7,7 +7,7 @@ function Layout ({ children }) {
   return (
     <>
     <TopBar />
-      <Container style={{ marginTop: '1.5625rem' }}>
+      <Container style={{ marginTop: '80px' }}>
       <main>
         {children}
       </main>
