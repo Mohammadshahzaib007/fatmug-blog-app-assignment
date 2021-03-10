@@ -51,12 +51,12 @@ export default function HomePageBlogCard ({ heading, description, imageLink, aut
         </CardContent>
       </CardActionArea>
       <CardActions style={{ justifyContent: 'flex-end' }}>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" style={{ color: 'black' }}>
           Read More
         </Button>
-        <Button size="small" color="primary">
+        <Typography size="small" color="primary" style={{ color: 'black' }}>
           7 min read
-        </Button>
+        </Typography>
         <IconButton>
           <StarBorderIcon />
         </IconButton>

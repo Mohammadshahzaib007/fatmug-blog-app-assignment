@@ -1,13 +1,14 @@
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import React from 'react';
 import HomePageBlogCard from '../components/HomePageBlogCard';
+import TopArticleCard from '../components/TopArticleCard';
 
 function Home () {
   return (
     <section>
       <Container>
-        <Grid container spacing={5}>
-          <Grid item xs={8}>
+        <Grid container spacing={4}>
+          <Grid item md={6} sm={12}>
             <HomePageBlogCard
               imageLink="https://picsum.photos/seed/picsum/500/300"
               heading="Lizard"
@@ -17,8 +18,30 @@ function Home () {
               organization="Croudit"
             />
           </Grid>
-          <Grid item xs={4}>
-            <h1>I am 4</h1>
+          {/* TOP ARTICLES PART */}
+          <Grid item md={6} sm={12}>
+            <div
+              style={{
+                width: '100%',
+                borderTop: '1px solid black',
+                borderBottom: '1px solid black',
+                textAlign: 'center',
+                padding: '10px 0',
+                marginBottom: '50px'
+              }}
+            >
+              <Typography
+                variant="h4"
+                component="h5"
+                style={{ textTransform: 'uppercase' }}
+              >
+                Top 10 articles
+              </Typography>
+            </div>
+
+            <div style={{ borderRight: '1px solid black', paddingRight: '20px' }}>
+              <TopArticleCard />
+            </div>
           </Grid>
         </Grid>
       </Container>
