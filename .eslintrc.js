@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     semi: [2, 'always'],
     camelcase: ['error', { allow: ['^[a-z]+(_[a-z]+)+$'] }] // Allow snakecase
+
   }
 };

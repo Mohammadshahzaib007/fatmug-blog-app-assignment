@@ -33,7 +33,7 @@ export default function TopBar () {
         <Container>
           <Toolbar spacing={0} disableGutters>
             <Typography variant="h6" className={classes.title}>
-              FATMUG | Greetings! UserName
+              <b>FATMUG</b> | Greetings! UserName
             </Typography>
             {navLinks.map((item, i) => (
               <Button key={i} style={{ marginLeft: '1.875rem', color: 'white', borderColor: 'white' }} variant={item.variant} color={item.color}>
