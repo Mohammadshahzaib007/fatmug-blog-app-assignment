@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Container } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,8 +23,13 @@ export default function TopBar () {
   const classes = useStyles();
 
   const navLinks = [
-    { name: 'write', link: '#', variant: 'contained', color: 'secondary' },
-    { name: 'your articles', link: '#', variant: 'outlined', color: 'secondary' },
+    { name: 'write', link: '/write', variant: 'contained', color: 'secondary' },
+    {
+      name: 'your articles',
+      link: '#',
+      variant: 'outlined',
+      color: 'secondary'
+    },
     { name: 'Logout', link: '#', variant: 'text', color: 'secondary' }
   ];
 
@@ -36,9 +42,19 @@ export default function TopBar () {
               <b>FATMUG</b> | Greetings! UserName
             </Typography>
             {navLinks.map((item, i) => (
-              <Button key={i} style={{ marginLeft: '1.875rem', color: 'white', borderColor: 'white' }} variant={item.variant} color={item.color}>
-                {item.name}
-              </Button>
+              <Link to={item.link} key={i}>
+                <Button
+                  style={{
+                    marginLeft: '1.875rem',
+                    color: 'white',
+                    borderColor: 'white'
+                  }}
+                  variant={item.variant}
+                  color={item.color}
+                >
+                  {item.name}
+                </Button>
+              </Link>
             ))}
           </Toolbar>
         </Container>
