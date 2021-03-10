@@ -1,9 +1,8 @@
 import React from 'react';
 import { Container } from '@material-ui/core';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import TopBar from './TopBar';
 
-// eslint-disable-next-line react/prop-types
 function Layout ({ children }) {
   return (
     <>
@@ -19,4 +18,4 @@ function Layout ({ children }) {
 
 export default Layout;
 
-Layout.PropTypes = { children: PropTypes.node.isRequired };
+Layout.propTypes = { children: propTypes.node.isRequired };
