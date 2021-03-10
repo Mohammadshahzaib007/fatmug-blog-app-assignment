@@ -28,7 +28,7 @@ export default function TopBar () {
     { name: 'write', link: '/write', variant: 'contained', color: 'secondary' },
     {
       name: 'your articles',
-      link: '#',
+      link: '/your-articles',
       variant: 'outlined',
       color: 'secondary'
     },
