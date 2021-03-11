@@ -4,6 +4,7 @@ import './App.css';
 import Layout from './components/Layout/Layout';
 import ArticleView from './pages/ArticleView';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import MyArticle from './pages/MyArticle';
 import writeArticle from './pages/writeArticle';
 
@@ -15,6 +16,7 @@ function App () {
        <Route exact path="/write" component={writeArticle} />
        <Route exact path="/article-view" component={ArticleView} />
        <Route exact path="/your-articles" component={MyArticle} />
+       <Route exact path="/login" component={Login} />
      </Switch>
    </Layout>
   );
