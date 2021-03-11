@@ -6,6 +6,7 @@ import ArticleView from './pages/ArticleView';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import MyArticle from './pages/MyArticle';
+import Signup from './pages/Signup';
 import writeArticle from './pages/writeArticle';
 
 function App () {
@@ -17,6 +18,7 @@ function App () {
        <Route exact path="/article-view" component={ArticleView} />
        <Route exact path="/your-articles" component={MyArticle} />
        <Route exact path="/login" component={Login} />
+       <Route exact path="/signup" component={Signup} />
      </Switch>
    </Layout>
   );

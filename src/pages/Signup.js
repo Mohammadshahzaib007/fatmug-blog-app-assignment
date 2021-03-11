@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   FormControl,
@@ -17,7 +17,8 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   formContainer: {
     width: '25rem',
-    height: '31.25rem',
+    minHeight: '31.25rem',
+    padding: '20px 0',
     background: 'white',
     borderRadius: '8px',
     boxShadow:
@@ -30,6 +31,19 @@ const useStyles = makeStyles({
 
 function Signup () {
   const classes = useStyles();
+
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    password: ''
+  });
+
+  const inputChangeHandler = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
     <section style={{ width: '100%', height: '80vh' }}>
@@ -52,13 +66,14 @@ function Signup () {
               }}
             >
               <Link
+                to="/login"
                 style={{
                   alignSelf: 'flex-start',
                   marginBottom: '50px',
                   color: 'rgba(0, 0, 0, .5)'
                 }}
               >
-                create a new account
+                Already a user?
               </Link>
               <FormControl fullWidth>
                 <Typography
@@ -68,6 +83,23 @@ function Signup () {
                   Sign Up
                 </Typography>
                 <TextField
+                  name="name"
+                  onChange={inputChangeHandler}
+                  style={{ marginBottom: '35px' }}
+                  variant="outlined"
+                  placeholder="Name"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <AccountCircle />
+                      </InputAdornment>
+                    )
+                  }}
+                />
+
+                <TextField
+                  name="email"
+                  onChange={inputChangeHandler}
                   style={{ marginBottom: '35px' }}
                   variant="outlined"
                   placeholder="example@gmail.com"
@@ -80,6 +112,8 @@ function Signup () {
                   }}
                 />
                 <TextField
+                  name="password"
+                  onChange={inputChangeHandler}
                   variant="outlined"
                   placeholder="Password"
                   InputProps={{
@@ -100,8 +134,8 @@ function Signup () {
                   <Link style={{ color: 'rgba(0, 0, 0, .5)' }}>
                     Forgot Password?
                   </Link>
-                  <Link style={{ color: 'rgba(0, 0, 0, .5)' }}>
-                    Not a Member yet?
+                  <Link to="/login" style={{ color: 'rgba(0, 0, 0, .5)' }}>
+                    Already a Member yet?
                   </Link>
                 </div>
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   FormControl,
@@ -17,7 +17,8 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   formContainer: {
     width: '25rem',
-    height: '31.25rem',
+    minHeight: '31.25rem',
+    // padding: '20px 0',
     background: 'white',
     borderRadius: '8px',
     boxShadow:
@@ -31,6 +32,18 @@ const useStyles = makeStyles({
 function Login () {
   const classes = useStyles();
 
+  const [state, setState] = useState({
+    email: '',
+    password: ''
+  });
+
+  const inputChangeHandler = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section style={{ width: '100%', height: '80vh' }}>
       <Container style={{ width: '100%', height: '100%' }}>
@@ -41,14 +54,36 @@ function Login () {
           style={{ width: '100%', height: '100%' }}
         >
           <Grid className={classes.formContainer}>
-            <div style={{ width: '80%', height: '80%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
-              <Link style={{ alignSelf: 'flex-start', marginBottom: '50px', color: 'rgba(0, 0, 0, .5)' }}>create a new account</Link>
+            <div
+              style={{
+                width: '80%',
+                height: '80%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column'
+              }}
+            >
+              <Link
+                to="/signup"
+                style={{
+                  alignSelf: 'flex-start',
+                  marginBottom: '50px',
+                  color: 'rgba(0, 0, 0, .5)'
+                }}
+              >
+                create a new account
+              </Link>
               <FormControl fullWidth>
-                <Typography variant="h5" style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <Typography
+                  variant="h5"
+                  style={{ textAlign: 'center', marginBottom: '40px' }}
+                >
                   Log In
                 </Typography>
                 <TextField
-                style={{ marginBottom: '35px' }}
+                  name="email"
+                  style={{ marginBottom: '35px' }}
                   variant="outlined"
                   placeholder="example@gmail.com"
                   InputProps={{
@@ -58,8 +93,10 @@ function Login () {
                       </InputAdornment>
                     )
                   }}
+                  onChange={inputChangeHandler}
                 />
                 <TextField
+                  name="password"
                   variant="outlined"
                   placeholder="Password"
                   InputProps={{
@@ -69,13 +106,26 @@ function Login () {
                       </InputAdornment>
                     )
                   }}
+                  onChange={inputChangeHandler}
                 />
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '30px' }}>
-                  <Link style={{ color: 'rgba(0, 0, 0, .5)' }}>Forgot Password?</Link>
-                  <Link style={{ color: 'rgba(0, 0, 0, .5)' }}>Not a Member yet?</Link>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    marginBottom: '30px'
+                  }}
+                >
+                  <Link style={{ color: 'rgba(0, 0, 0, .5)' }}>
+                    Forgot Password?
+                  </Link>
+                  <Link to="/signup" style={{ color: 'rgba(0, 0, 0, .5)' }}>
+                    Not a Member yet?
+                  </Link>
                 </div>
 
-                <Button variant="contained" color="primary" size="medium">SIGN IN</Button>
+                <Button variant="contained" color="primary" size="medium">
+                  SIGN IN
+                </Button>
               </FormControl>
             </div>
           </Grid>
