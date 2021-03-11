@@ -22,10 +22,16 @@ function MyArticle () {
                 component="h1"
                 style={{ textTransform: 'uppercase', fontWeight: '700' }}
               >
-               your SUBMITTED articles
+                your SUBMITTED articles
               </Typography>
             </div>
-            <YourArticleCard />
+            <YourArticleCard
+              heading="10 React Interview Questions for 2020"
+              desc="Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s ...."
+              imgSrc="link"
+            />
           </Grid>
         </Grid>
       </Container>
