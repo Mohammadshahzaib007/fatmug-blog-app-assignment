@@ -44,9 +44,7 @@ export default function TopArticleCard () {
     <Card className={classes.root}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
-          {/* <Typography component="h5" variant="h5">
-            Live From Space
-          </Typography> */}
+
           <div style={{ display: 'flex', marginBottom: '20px' }}>
             <InfoOutlinedIcon />{' '}
             <Typography

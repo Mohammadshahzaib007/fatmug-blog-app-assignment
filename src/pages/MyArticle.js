@@ -20,7 +20,7 @@ function MyArticle () {
               <Typography
                 variant="h5"
                 component="h1"
-                style={{ textTransform: 'uppercase', fontWeight: '700' }}
+                style={{ textTransform: 'uppercase', fontWeight: '700', letterSpacing: '5px' }}
               >
                 your SUBMITTED articles
               </Typography>
