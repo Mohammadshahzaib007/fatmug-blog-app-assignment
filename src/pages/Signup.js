@@ -45,6 +45,10 @@ function Signup () {
     });
   };
 
+  const onSubmitHandler = () => {
+    console.log(state);
+  };
+
   return (
     <section style={{ width: '100%', height: '80vh' }}>
       <Container style={{ width: '100%', height: '100%' }}>
@@ -75,7 +79,7 @@ function Signup () {
               >
                 Already a user?
               </Link>
-              <FormControl fullWidth>
+              <FormControl fullWidth >
                 <Typography
                   variant="h5"
                   style={{ textAlign: 'center', marginBottom: '40px' }}
@@ -131,7 +135,7 @@ function Signup () {
                     marginBottom: '30px'
                   }}
                 >
-                  <Link style={{ color: 'rgba(0, 0, 0, .5)' }}>
+                  <Link to="#" style={{ color: 'rgba(0, 0, 0, .5)' }}>
                     Forgot Password?
                   </Link>
                   <Link to="/login" style={{ color: 'rgba(0, 0, 0, .5)' }}>
@@ -139,7 +143,7 @@ function Signup () {
                   </Link>
                 </div>
 
-                <Button variant="contained" color="primary" size="medium">
+                <Button variant="contained" color="primary" size="medium" onClick={onSubmitHandler}>
                   SIGN IN
                 </Button>
               </FormControl>
