@@ -23,15 +23,17 @@ const useStyles = makeStyles({
 
 function writeArticle () {
   const classes = useStyles();
-  const [{ alt, src, name }, setImg] = useState({
+  const [{ alt, src, name, file }, setImg] = useState({
     src: placeholder,
     alt: 'Upload an Image',
-    name: ''
+    name: '',
+    file: null
   });
 
   const [post, setPost] = useState({
     title: '',
-    description: ''
+    description: '',
+    img: file
   });
 
   const inputChangeHandler = (e) => {
@@ -46,7 +48,8 @@ function writeArticle () {
       setImg({
         src: URL.createObjectURL(e.target.files[0]),
         alt: e.target.files[0].name,
-        name: e.target.files[0].name
+        name: e.target.files[0].name,
+        file: e.target.file[0]
       });
     }
   };
